@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#442b00",
+                    "on-primary": "#31302e",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#ecbf7f",
+                    "on-primary-fixed": "#1c1c19",
+                    "inverse-surface": "#e5e2e1",
+                    "inverse-primary": "#605e5b",
+                    "on-error": "#690005",
+                    "surface-container-lowest": "#0e0e0e",
+                    "outline": "#939189",
+                    "tertiary": "#ffffff",
+                    "error-container": "#93000a",
+                    "on-surface-variant": "#c9c6be",
+                    "outline-variant": "#484740",
+                    "primary-fixed": "#e6e2de",
+                    "inverse-on-surface": "#313030",
+                    "tertiary-fixed": "#ffddb2",
+                    "on-secondary": "#392f21",
+                    "surface-container-low": "#1c1b1b",
+                    "on-secondary-fixed": "#231a0e",
+                    "on-tertiary-fixed-variant": "#60410c",
+                    "surface": "#131313",
+                    "on-secondary-container": "#c3b3a0",
+                    "on-surface": "#e5e2e1",
+                    "surface-variant": "#353534",
+                    "surface-container-highest": "#353534",
+                    "secondary-container": "#504536",
+                    "secondary-fixed-dim": "#d5c4b1",
+                    "on-tertiary-fixed": "#291800",
+                    "surface-bright": "#393939",
+                    "background": "#131313",
+                    "secondary": "#d5c4b1",
+                    "on-tertiary-container": "#815e28",
+                    "primary-fixed-dim": "#c9c6c2",
+                    "surface-container": "#201f1f",
+                    "on-secondary-fixed-variant": "#504536",
+                    "primary-container": "#e6e2de",
+                    "surface-container-high": "#2a2a2a",
+                    "on-background": "#e5e2e1",
+                    "on-primary-fixed-variant": "#484744",
+                    "tertiary-container": "#ffddb2",
+                    "surface-tint": "#c9c6c2",
+                    "error": "#ffb4ab",
+                    "on-primary-container": "#666461",
+                    "surface-dim": "#131313",
+                    "secondary-fixed": "#f2e0cc",
+                    "primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "section-gap": "160px",
+                    "margin-desktop": "80px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "display-lg": ["Playfair Display"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                    "display-lg": ["84px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>body {
+    background-color: #131313;
+    color: #e5e2e1;
+    overflow-x: hidden
+    }
+.film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCjJab09hnD-xWAWFYKkk8RElV3c1ZMXQ84j9JWr-307RRApWOKtwq7SekEinXxaSB8qc_aIhWeG9dojHqCcm4hk2u9Q-0mpY6fbowxcIbZVzLBpXl_64at_6tXQ_QQ8ZsejQ5rvCjla1bpYjOP9BjNV5XYENuRqC9qkF4gsiyfMGmIzETUKZXumoEj-cd8_7JfvVGdd9lB0CYOFWLTwikazqJHiEnGrD6Z5WAm8R9CvrvJB_WqGWrKNuf2cuvu3yc8HCmst8_RAz7z);
+    opacity: 0.03;
+    filter: contrast(150%) brightness(1000%)
+    }
+.sun-beam {
+    background: linear-gradient(45deg, transparent 0%, rgba(255, 221, 178, 0.05) 50%, transparent 100%);
+    filter: blur(60px);
+    transform: rotate(-15deg)
+    }
+.dust-particle {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.2;
+    pointer-events: none;
+    animation: float 20s infinite linear
+    }
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0;
+        } 10% {
+        opacity: 0.3;
+        } 90% {
+        opacity: 0.3;
+        } 100% {
+        transform: translate(100px, -500px) scale(0.5);
+        opacity: 0;
+        }
+    }
+.glass-card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05)
+    }
+.architectural-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px
+    }
+.perspective-container {
+    perspective: 1000px
+    }
+.hover-lift {
+    transition: transform 0.7s cubic-bezier(0.2, 1, 0.3, 1)
+    }
+.hover-lift:hover {
+    transform: translatey(-10px) rotatex(2deg)
+    }</style>
+</head>
+<body class="font-body-md">
+<div class="film-grain"></div>
+<!-- Navigation Shell -->
+<nav class="fixed top-8 left-1/2 -translate-x-1/2 w-[90%] rounded-full bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl flex justify-between items-center px-8 py-4 z-50">
+<div class="font-display-lg text-headline-md tracking-widest text-primary dark:text-primary">STUDIO RAVYA</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="font-label-caps text-label-caps tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors duration-500" href="ecosystem.html">Ecosystem</a>
+<a class="font-label-caps text-label-caps tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors duration-500" href="projects.html">Projects</a>
+<a class="font-label-caps text-label-caps tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors duration-500" href="journal.html">Journal</a>
+<a class="font-label-caps text-label-caps tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors duration-500" href="philosophy.html">Philosophy</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 font-label-caps text-label-caps tracking-[0.1em] hover:scale-105 transition-transform duration-300 active:opacity-80 active:scale-95">Connect</button>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-screen flex flex-col justify-center items-center overflow-hidden">
+<!-- Atmospheric Background -->
+<div class="absolute inset-0 bg-gradient-to-tr from-surface via-[#1a1714] to-surface-dim z-0"></div>
+<div class="absolute inset-0 sun-beam opacity-40"></div>
+<div class="absolute -top-40 -left-40 w-96 h-96 bg-tertiary-container/10 rounded-full blur-[120px]"></div>
+<div class="absolute inset-0 pointer-events-none z-10" id="dust-container"></div>
+<!-- Content -->
+<div class="relative z-20 text-center px-margin-mobile md:px-0 max-w-4xl">
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg mb-6 tracking-tight leading-none animate-fade-in">
+                IDEAS THAT<br/><span class="italic font-normal text-secondary">CARRY SOUL.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto opacity-80 leading-relaxed">
+                A future-facing creative production house exploring storytelling, media, technology, design, and youth culture.
+            </p>
+<div class="mt-12 flex justify-center gap-6">
+<span class="material-symbols-outlined text-tertiary-fixed-dim animate-bounce">expand_more</span>
+</div>
+</div>
+</header>
+<!-- Intro Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="max-w-7xl mx-auto architectural-grid items-center">
+<div class="col-span-12 md:col-span-5 mb-12 md:mb-0">
+<p class="font-label-caps text-label-caps text-on-tertiary-container mb-4 tracking-[0.3em]">ORIGIN</p>
+<h2 class="font-headline-lg text-headline-lg leading-tight mb-8">
+                    Studio Ravya exists at the intersection of stories, systems, culture, and future imagination.
+                </h2>
+<div class="w-20 h-[1px] bg-outline-variant"></div>
+</div>
+<div class="col-span-12 md:col-span-7 relative group">
+<div class="absolute -inset-4 bg-tertiary-container/5 blur-2xl group-hover:bg-tertiary-container/10 transition-colors duration-1000"></div>
+<img class="w-full h-[600px] object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700 shadow-2xl relative z-10" data-alt="A cinematic low-angle shot of a brutalist Indian modernist concrete building during the golden hour. Warm, sharp orange sunlight slices through the geometric voids of the architecture, creating deep shadows and luminous edges. The atmosphere is filled with a soft amber haze, and the architectural lines feel both ancient and futuristic. The overall mood is silent, powerful, and profoundly calm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC12aCqUKc23MZu1TbIocZ6b0hhKF3jAaI1WWFaLldA3rxStE4xh37WxzbfPIUR0uCyOnaSyXkgtYEb8txufJm-VwDfpmcyWuNYy59KcLzyrA8VzZ1MdM1jd3psEU2l_Wlg0YDCTvaT1-56S5i6HKwfjhOgP-Xr9TjE2yjyaqeGVEQSmKm3hWykQaf3xfJU9SnayK_dBKamns8gYqT6u0c_maqKi_CEiB4a59dycuAFNhTg370jjLoyjiL97UIcKW0OJMAO3dy-Ouzl"/>
+</div>
+</div>
+</section>
+<!-- The Four Worlds -->
+<section class="py-section-gap bg-surface-container-lowest">
+<div class="px-margin-mobile md:px-margin-desktop mb-24">
+<p class="font-label-caps text-label-caps text-on-tertiary-container mb-4 text-center tracking-[0.4em]">PILLARS</p>
+<h2 class="font-display-lg text-headline-lg text-center">THE FOUR WORLDS</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-0 w-full h-[819px]">
+<!-- World 1 -->
+<div class="relative group overflow-hidden border-r border-outline-variant/20">
+<img class="absolute inset-0 w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 opacity-40 group-hover:opacity-60" data-alt="A close-up shot of an antique film projector lens in a dimly lit, smoky room. A single beam of flickering warm light cuts through the darkness, illuminating dust motes. The aesthetic is monochromatic and moody with deep shadows and golden highlights. The mood is nostalgic yet highly cinematic, focusing on the raw essence of traditional storytelling through celluloid." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaBze7wuY8PZgOr23aiX5UgTG_ZQXKbOiVqmqxljFlYNKITxbH37HpumT3BWShPTwMzs8nk8QqbRkfsadg91FEaAZph5MuD50xxCExLEQhClf8m7awGEnvrcDFSabnbi_zv4NrHrv3WCOt-6P-1XKrzk3eNT26TqF3iMzoNjg2Wy57gLMuGu2z63TCSodYjCzCYtoSQW4Z9vVBawA1JH0VsY3Wogu-UFoeAC3QDHH9i7yFF9qJ9Yt7OchuQx7UC8yFBaEGrUWe7i2p"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-12 left-10 transition-transform duration-500 group-hover:-translate-y-4">
+<p class="font-label-caps text-[10px] text-secondary mb-2">WORLD 01</p>
+<h3 class="font-headline-md text-headline-md mb-2">Storytelling</h3>
+<p class="font-body-md text-on-surface-variant text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-700">Films / Podcasts</p>
+</div>
+</div>
+<!-- World 2 -->
+<div class="relative group overflow-hidden border-r border-outline-variant/20">
+<img class="absolute inset-0 w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 opacity-40 group-hover:opacity-60" data-alt="A sophisticated abstract digital art visualization showing glowing network lines and ethereal glass spheres floating in a dark, infinite space. The lighting is soft and golden, resembling a digital sunrise. The style is ultra-modern and minimalist, emphasizing the seamless integration of high technology and organic form. The overall atmosphere is intelligent, futuristic, and calm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhvfLXtQvsXLvyf6c3CfK9lN3WTygxYVpwvuSVE-fqm_XCnibypSFaupzgUI6jMNyNVzq0Hdr1flh0UN12Sgz5TYMV-zpATKIJtm4_02a9mbJfwL1yJ-L-KWaUlAVQ5ehY71IM0g14m3WZ-YFkjTiZAjr6eANTihw2ZjXwMlopbMboelFipx0GZJlkOGynmQ0lVBta5CfmAMaTQjrMS8AABhYLXO96hr9W-TE9-QP1qT2udlr5LKeIvini6fxpKd7EtRAEYoZfZmmO"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-12 left-10 transition-transform duration-500 group-hover:-translate-y-4">
+<p class="font-label-caps text-[10px] text-secondary mb-2">WORLD 02</p>
+<h3 class="font-headline-md text-headline-md mb-2">Creative Tech</h3>
+<p class="font-body-md text-on-surface-variant text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-700">Digital Exp</p>
+</div>
+</div>
+<!-- World 3 -->
+<div class="relative group overflow-hidden border-r border-outline-variant/20">
+<img class="absolute inset-0 w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 opacity-40 group-hover:opacity-60" data-alt="An editorial arrangement of premium art journals and handwritten manuscripts on a dark sandstone surface. A single shaft of morning light highlights the texture of the thick, cream-colored paper and the embossed gold leaf titles. The composition is elegant and academic, evoking the feeling of a quiet, luxurious library. The lighting is focused and warm, creating a high-contrast cinematic look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFAmXn1N7QeDN9pYGNCLux_z8gRkqUZNxGdL504faF2tfSwci6-iyX5CwXCHI_7ajlRETCMvGtxBA9zD_Aa1DdZ1hYoyb64GU2czNPBHmxPS0W_aZFNW-5iRX896KsrXlVtq4D1FgEueHPhydmEyjkxt0JSQAlRQ8Oyy6ty_jtgqr2UTBIqPS5GY3QQ7kOtLHHNLpxjR0mLN4gC0LWNa80T3iHuoCykh4qoTaYxLEKiA1ZNVO0m702Vhlzda0B1NasvRqjBs93qHeP"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-12 left-10 transition-transform duration-500 group-hover:-translate-y-4">
+<p class="font-label-caps text-[10px] text-secondary mb-2">WORLD 03</p>
+<h3 class="font-headline-md text-headline-md mb-2">Editorial Culture</h3>
+<p class="font-body-md text-on-surface-variant text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-700">Journal / Essays</p>
+</div>
+</div>
+<!-- World 4 -->
+<div class="relative group overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 opacity-40 group-hover:opacity-60" data-alt="A silhouettes of a diverse group of young people standing together in a vast, sun-drenched industrial loft space. Huge floor-to-ceiling windows cast long shadows and dramatic light beams across the floor. The setting is raw but clean, suggesting a space of creative gathering. The mood is hopeful, communal, and dynamic, captured with a wide-angle lens to emphasize the scale and the future potential." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAspm0CpmdOWLJxmrEsOSnE-sYZ98voHALV3tvR23dfktxl7gsV1lvdx33LfXmW_733yMt9pgqSuEUhClAPuXVn9Tz6mvecA6PZOSru-vMh_erp3c29aaSBrwuIUPKRbIL_vAJRwGhxzo0LzSSC20PIIxT7Fd-e7-QnhWDVcTvZlhqSj6jdKcL1eTd6Yf16B7JhWzgxVhN7Mw4ndFQWM48HF9Mfw9DvqTHXRYLa6mg5t80E2BaJE89zHDM3lhJY6JgtKIXHIqvYpd1d"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-12 left-10 transition-transform duration-500 group-hover:-translate-y-4">
+<p class="font-label-caps text-[10px] text-secondary mb-2">WORLD 04</p>
+<h3 class="font-headline-md text-headline-md mb-2">Future Communities</h3>
+<p class="font-body-md text-on-surface-variant text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-700">Youth Culture</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Project -->
+<section class="py-section-gap relative">
+<div class="absolute top-0 right-0 w-1/2 h-full bg-surface-container/30 -z-10"></div>
+<div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<div class="architectural-grid items-center">
+<div class="col-span-12 md:col-span-8 order-2 md:order-1">
+<div class="perspective-container">
+<img class="w-full aspect-video object-cover shadow-[40px_40px_0px_rgba(255,221,178,0.05)] hover-lift" data-alt="A top-down editorial shot of a minimalist workstation featuring a vintage typewriter, a sleek modern tablet, and a cup of black coffee. The desk is made of dark, weathered wood. Warm sunlight creates a dramatic diagonal line across the composition. The style is a blend of old-world charm and futuristic clean lines, reflecting the 'Junior Journalist' concept. The mood is focused and intellectual." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg3jWtk77sEfK8mVFIvPbcpw2iONMhrF1qHqxUMLY-dWeummflBvbfpBpgrFP6VdGmby3J84OpEqGEOj40kf0SiJR2cLiFq5obzxByoizfjDGVpL10izM_54gHMkyY4gAehBER182-b-WgTyK2K2WQrAbJSiAFqR7HEhT0_9h4hzRwGeT7Jl4DM2bDCR2QBm39K-8PUWCH_XH8QLTCLjfMBBJ6IWB7D8tB5a0CYWu0lRBfU892VxGzUYlfaheyJamkBrY3QkmakKhe"/>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 order-1 md:order-2 md:pl-12 mb-12 md:mb-0">
+<p class="font-label-caps text-label-caps text-secondary mb-4 tracking-[0.4em]">FEATURED CASE</p>
+<h2 class="font-display-lg text-headline-lg mb-6">JUNIOR JOURNALIST</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+                        Redefining how the next generation perceives truth through immersive digital media and collaborative investigation.
+                    </p>
+<button class="border border-secondary/30 text-secondary px-8 py-4 font-label-caps text-label-caps tracking-widest hover:bg-secondary hover:text-surface transition-all duration-500">
+                        EXPLORE PROJECT
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Journal Preview -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-dim">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div>
+<p class="font-label-caps text-label-caps text-on-tertiary-container mb-4 tracking-[0.3em]">JOURNAL</p>
+<h2 class="font-headline-lg text-headline-lg">LATEST THOUGHTS</h2>
+</div>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant pb-1" href="#">VIEW ALL JOURNAL</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Article 1 -->
+<div class="group cursor-pointer">
+<div class="overflow-hidden mb-6 aspect-[4/5]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0" data-alt="A futuristic digital interface overlaying a high-speed motion-blurred shot of a bustling Indian street at night. The interface elements are glowy white and gold, showing data streams. The street is filled with the neon lights of shops and vehicle streaks. The style is cyberpunk-minimalism, blending frantic urban energy with sophisticated technological design. The atmosphere is electric and forward-looking." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASpurdGBCrXBiS4VVyTsPrLEFOy4yiTzc3XfNX1mXKb4LxCe0kK7NX6IwE50ejUyBZc0Qkp50OCT2UwHd6crAwkEwDeR481mPAS6kqsUGcAhqsiEn3aAGo4UMEPc7qwu3o1uAHp7pI8WAiVfAC7iutFRt-YrI7sbRAqCb7cFmP6XLO2U-7hafc3bImGRdMEdACcUQWQr_s-lmeFZ4KXYaofJopp5M7DwZcU212bTIH7EFXVhcMwHqgRiodilXy5leOld2MdDayb_Vu"/>
+</div>
+<p class="font-label-caps text-[10px] text-secondary mb-3 tracking-widest">NARRATIVE</p>
+<h3 class="font-headline-md text-[24px] mb-4 group-hover:text-secondary transition-colors duration-300">The Future Needs Better Stories</h3>
+<p class="font-body-md text-on-surface-variant line-clamp-2">Exploring the responsibility of creators in an era of infinite noise and fragmented attention.</p>
+</div>
+<!-- Article 2 -->
+<div class="group cursor-pointer">
+<div class="overflow-hidden mb-6 aspect-[4/5]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0" data-alt="A macro shot of a single, glowing golden circuit path etched into a dark, matte obsidian surface. The lighting is soft and focused, making the gold appear liquid and organic. Small droplets of condensation rest on the cool surface, adding a tactile, sensory layer. The aesthetic is extremely high-end and clean, representing the concept of 'Emotional Technology'. The mood is serene and precious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYqczi-juJhEtJyA0lTC7rJRkhT7z0_du-KSeuqVHHHWIIeGZRvfayFtzbGdEeNbQmxtKr4rcyb1q_n-6cA7RM2bjaY1dDEYRoxK5vjom16x6XNCWs6JWRNjiPHhI45d6heedgVRMl9Beq2YeMgNCyyc8OPBYoGFKCrWhARtJ3mndv3RKuUnZZQtCMPWhaRgyVjz4AjPv9GyO5dWb4oJ24OamSQJvyQSaUlSDTHpiqpn6xJ4Mn9aBhG3QlKih0RNDVddvCDBnkMa9k"/>
+</div>
+<p class="font-label-caps text-[10px] text-secondary mb-3 tracking-widest">SYSTEMS</p>
+<h3 class="font-headline-md text-[24px] mb-4 group-hover:text-secondary transition-colors duration-300">Designing Emotional Technology</h3>
+<p class="font-body-md text-on-surface-variant line-clamp-2">How we build tools that resonate with the human heart rather than just the human hand.</p>
+</div>
+<!-- Article 3 -->
+<div class="group cursor-pointer">
+<div class="overflow-hidden mb-6 aspect-[4/5]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0" data-alt="A wide, cinematic wide-shot of an outdoor amphitheater in India at twilight. A massive projection screen displays a close-up of a human eye in high definition. The audience is composed of diverse young adults, their faces illuminated by the soft blue and white glow of the screen. The background shows a silhouette of ancient ruins against a deep purple and amber sky. The atmosphere is communal, awe-inspiring, and culturally significant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIyxMiNnSLMdI8RlbvN8HEOGYiLQz4KBRDAnNiki7miT9NRde7VNzuQtIMX94NFZal7Qbb9G1DeV9LFJMwdkK1SuTj9wAmuFJR7178gBuvixIL8IN-8oKtvcLw12cvX7NKe4JTR_N3yWv0o8lqylGyEiOBVvohRbtVLhHUU6fu9XMJcdijQWI9y7qvQiEElfk4HxbqjObrS3IT9X8U8Xk59hsB3vNNr7VvHx3ZDAvSzW7B_xx1U1PXDZsrakXlzGTZBt04IW_4uAdr"/>
+</div>
+<p class="font-label-caps text-[10px] text-secondary mb-3 tracking-widest">CULTURE</p>
+<h3 class="font-headline-md text-[24px] mb-4 group-hover:text-secondary transition-colors duration-300">Cinema, Culture, and Young India</h3>
+<p class="font-body-md text-on-surface-variant line-clamp-2">Analyzing the shift in visual language across the subcontinent's burgeoning youth movements.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Closing Statement -->
+<section class="py-section-gap relative overflow-hidden flex items-center justify-center min-h-[614px]">
+<div class="absolute inset-0 bg-surface-container-high/20 blur-3xl rounded-full scale-150"></div>
+<div class="relative z-10 text-center max-w-5xl px-margin-mobile">
+<h2 class="font-display-lg text-headline-md md:text-headline-lg leading-relaxed italic text-on-surface">
+                "We build stories, systems, and experiences that illuminate culture and imagination."
+            </h2>
+<div class="mt-16">
+<button class="bg-primary text-on-primary px-12 py-5 font-label-caps text-label-caps tracking-[0.2em] hover:scale-105 transition-transform duration-500">START A DIALOGUE</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full mt-section-gap border-t border-outline-variant/30 bg-surface dark:bg-surface">
+<div class="max-w-7xl mx-auto px-margin-desktop py-20 flex flex-col gap-unit">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-12">
+<div class="font-display-lg text-headline-lg tracking-tighter text-on-surface">STUDIO RAVYA</div>
+<div class="flex flex-wrap gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-500 ease-in-out" href="#">Instagram</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-500 ease-in-out" href="#">Vimeo</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-500 ease-in-out" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-500 ease-in-out" href="#">Privacy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-500 ease-in-out" href="#">Inquire</a>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center border-t border-outline-variant/10 pt-12">
+<p class="font-body-md text-body-md text-on-surface-variant/50">© 2024 STUDIO RAVYA. CRAFTED IN LIGHT.</p>
+<div class="flex items-center gap-2 mt-4 md:mt-0 text-on-surface-variant/50">
+<span class="material-symbols-outlined text-[14px]">public</span>
+<span class="font-label-caps text-[10px]">NEW DELHI • LONDON • TOKYO</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Dust particles effect
+        const container = document.getElementById('dust-container');
+        const particleCount = 40;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'dust-particle';
+            
+            const size = Math.random() * 3 + 1;
+            const posX = Math.random() * 100;
+            const posY = Math.random() * 100;
+            const delay = Math.random() * 20;
+            const duration = Math.random() * 10 + 15;
+
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${posX}%`;
+            particle.style.top = `${posY}%`;
+            particle.style.animationDelay = `${delay}s`;
+            particle.style.animationDuration = `${duration}s`;
+
+            container.appendChild(particle);
+        }
+
+        // Scroll revealing interaction
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Philosophy | STUDIO RAVYA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#442b00",
+                    "on-primary": "#31302e",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#ecbf7f",
+                    "on-primary-fixed": "#1c1c19",
+                    "inverse-surface": "#e5e2e1",
+                    "inverse-primary": "#605e5b",
+                    "on-error": "#690005",
+                    "surface-container-lowest": "#0e0e0e",
+                    "outline": "#939189",
+                    "tertiary": "#ffffff",
+                    "error-container": "#93000a",
+                    "on-surface-variant": "#c9c6be",
+                    "outline-variant": "#484740",
+                    "primary-fixed": "#e6e2de",
+                    "inverse-on-surface": "#313030",
+                    "tertiary-fixed": "#ffddb2",
+                    "on-secondary": "#392f21",
+                    "surface-container-low": "#1c1b1b",
+                    "on-secondary-fixed": "#231a0e",
+                    "on-tertiary-fixed-variant": "#60410c",
+                    "surface": "#131313",
+                    "on-secondary-container": "#c3b3a0",
+                    "on-surface": "#e5e2e1",
+                    "surface-variant": "#353534",
+                    "surface-container-highest": "#353534",
+                    "secondary-container": "#504536",
+                    "secondary-fixed-dim": "#d5c4b1",
+                    "on-tertiary-fixed": "#291800",
+                    "surface-bright": "#393939",
+                    "background": "#131313",
+                    "secondary": "#d5c4b1",
+                    "on-tertiary-container": "#815e28",
+                    "primary-fixed-dim": "#c9c6c2",
+                    "surface-container": "#201f1f",
+                    "on-secondary-fixed-variant": "#504536",
+                    "primary-container": "#e6e2de",
+                    "surface-container-high": "#2a2a2a",
+                    "on-background": "#e5e2e1",
+                    "on-primary-fixed-variant": "#484744",
+                    "tertiary-container": "#ffddb2",
+                    "surface-tint": "#c9c6c2",
+                    "error": "#ffb4ab",
+                    "on-primary-container": "#666461",
+                    "surface-dim": "#131313",
+                    "secondary-fixed": "#f2e0cc",
+                    "primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "section-gap": "160px",
+                    "margin-desktop": "80px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "display-lg": ["Playfair Display"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                    "display-lg": ["84px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>body {
+    background-color: #131313;
+    color: #e5e2e1;
+    overflow-x: hidden
+    }
+.film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAsIY95vT4dnTFYgjuaxAwiUlh7yMzVoPW_QbdpTUC_IC8f21-eByFz4J5fKs_aDkvLq9DaXAy-5GBu5ZzPgczJIeY4AXZAv9hSkdR37kKCF69VlGXD_TxQvrIpfc7lZ2yN_SnT7wK78pTUrHAcusEwVrzicMAMX0-E7JTpjmv0tFLRf9IYhfX0wwSUfS_V6s74gIVPA7PxRR5AC14WJCF3Sg6BIT87JPIfS1zwNig-ABkP0O2fLzeUzr1GeGNm7SaTfQA2MvyJbNBN)
+    }
+.sun-glow {
+    background: radial-gradient(circle at center, rgba(236, 191, 127, 0.08) 0%, transparent 70%)
+    }
+.glass-panel {
+    backdrop-filter: blur(40px);
+    background: rgba(255, 255, 255, 0.03)
+    }
+.reveal-up {
+    opacity: 0;
+    transform: translatey(30px);
+    transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1)
+    }
+.reveal-up.active {
+    opacity: 1;
+    transform: translatey(0)
+    }
+.parallax-bg {
+    transform: translatey(var(--y, 0));
+    transition: transform 0.1s linear
+    }</style>
+</head>
+<body class="font-body-md text-on-surface">
+<div class="film-grain"></div>
+<!-- Navigation -->
+<nav class="fixed top-8 left-1/2 -translate-x-1/2 w-[90%] rounded-full bg-white/5 border border-white/10 backdrop-blur-xl flex justify-between items-center px-8 py-4 z-50 shadow-2xl">
+<div class="font-display-lg text-headline-md tracking-widest text-primary">STUDIO RAVYA</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-caps text-label-caps tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors duration-500 hover:scale-105" href="#">Ecosystem</a>
+<a class="font-label-caps text-label-caps tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors duration-500 hover:scale-105" href="#">Projects</a>
+<a class="font-label-caps text-label-caps tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors duration-500 hover:scale-105" href="#">Journal</a>
+<a class="font-label-caps text-label-caps tracking-[0.2em] text-primary font-bold border-b border-primary/30 pb-1 hover:scale-105" href="#">Philosophy</a>
+</div>
+<button class="font-label-caps text-label-caps tracking-[0.2em] bg-primary text-on-primary px-6 py-2 rounded-full hover:scale-105 transition-transform duration-300">Connect</button>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-surface z-10"></div>
+<img alt="Architectural Solitude" class="w-full h-full object-cover opacity-60" data-alt="A grand architectural interior featuring ancient sandstone pillars illuminated by a single vertical shaft of cinematic golden sunlight. The atmosphere is filled with subtle dust motes and a sense of profound, quiet luxury. The lighting creates high-contrast shadows against the warm, textured stone surfaces, evoking Indian Artistic Futurism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpRuS1mNwlBh9EGuI5y0-6fMSqts4eTyAl2QZk7zdlXeQF2LbtZxMe7tjyPUcMsHCuJUhB_455o3pXXMDXM6cHs7A3h80z0hTxRZb5PWfTk7TacpiXACvn0gkWHoR-qKR87-pDCuIig433xblzreXxBqaAPSzdnFS671wTk_quZYp8K-QFTEYtiH3Vqhg5FQ3ETGskkmfqmpmMG0o_0Vq_ilVG8MW0K1Mk_j7BL2vaBT5EAabU8n-PyFUE-lrx06DnEQqi6C_-rqfd"/>
+</div>
+<div class="relative z-20 text-center px-margin-mobile md:px-0">
+<span class="font-label-caps text-label-caps tracking-[0.4em] text-secondary mb-6 block reveal-up">THE MANIFESTO</span>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg mb-8 reveal-up" style="transition-delay: 0.2s;">We Build In Light.</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto reveal-up" style="transition-delay: 0.4s;">A studio dedicated to the intersection of ancient permanence and the fleeting beauty of the digital dawn.</p>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40 reveal-up" style="transition-delay: 0.8s;">
+<span class="font-label-caps text-label-caps tracking-widest">SCROLL</span>
+<span class="material-symbols-outlined animate-bounce">expand_more</span>
+</div>
+</section>
+<!-- Origin Story: The Meaning of Ravya -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 reveal-up">
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim mb-4 block">01 / ETYMOLOGY</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6">Ravya: The Sun in Motion.</h2>
+<p class="font-body-lg text-on-surface-variant mb-8">In the ancient tongue, Ravya signifies the sun. Not as a static object, but as a force of constant illumination—the source of life, shadow, and clarity. At Studio Ravya, we don't just design interfaces; we orchestrate radiance.</p>
+<div class="flex items-center gap-4">
+<div class="h-[1px] w-12 bg-outline-variant"></div>
+<span class="font-body-md italic text-secondary">The origin of every journey begins at first light.</span>
+</div>
+</div>
+<div class="md:col-span-6 md:col-start-7 mt-12 md:mt-0 relative reveal-up" style="transition-delay: 0.3s;">
+<div class="absolute -top-10 -left-10 w-40 h-40 sun-glow rounded-full blur-3xl"></div>
+<div class="aspect-[4/5] overflow-hidden rounded-lg shadow-2xl border border-white/5">
+<img alt="Textured Stone" class="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-1000" data-alt="An abstract, macro close-up of sun-drenched sandstone textures, showing intricate natural patterns and golden minerals sparkling under direct morning light. The composition is editorial and minimalist, focusing on the materiality of the stone and the warmth of the glow, perfectly capturing the Indian Artistic Futurism aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpludVMmKdE8kWjKWBu5FHFDEQwLi8qIeJkWyzW_ElJEdTtF1KZ-5KqPsSY6W7DLRlvv7rFmcC9CtpbmpCSq7SABEYg7vpMoTZ6bIEsJlPmGUeD75z0N4PAD2wCAtSru8umOReoWjfTavzqD_w9Wz5ebAomDp7PiGvusXnvC36xKBQgBei3-LlAsAQCmxWeStKN5iUdDL21amPedbtE5KsT4D54AVcRLt-pb_gvEwaqrDYDhQmJuCMncxzpf9aZ2bymNmhifAdO0B2"/>
+</div>
+</div>
+</div>
+</section>
+<!-- The Sun Concept: Radiance & Illumination -->
+<section class="bg-surface-container-low py-section-gap relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/2 h-full sun-glow opacity-20 pointer-events-none"></div>
+<div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<div class="text-center mb-24 reveal-up">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg mb-4">Orchestrating Illumination</h2>
+<p class="font-body-md text-on-surface-variant tracking-[0.2em] uppercase">The Physics of Presence</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Concept Card 1 -->
+<div class="glass-panel p-10 rounded-xl border border-white/5 reveal-up" style="transition-delay: 0.1s;">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-4xl mb-6">light_mode</span>
+<h3 class="font-headline-md text-headline-md mb-4">Clarity</h3>
+<p class="font-body-md text-on-surface-variant">We strip away the noise until only the essential remains. Like the sun at noon, our work is uncompromising in its focus and functional depth.</p>
+</div>
+<!-- Concept Card 2 -->
+<div class="glass-panel p-10 rounded-xl border border-white/5 reveal-up" style="transition-delay: 0.2s;">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-4xl mb-6">wb_twilight</span>
+<h3 class="font-headline-md text-headline-md mb-4">Atmosphere</h3>
+<p class="font-body-md text-on-surface-variant">Technology should feel like a mood, not a tool. We design with soft gradients, tonal layering, and the warmth of a setting sun.</p>
+</div>
+<!-- Concept Card 3 -->
+<div class="glass-panel p-10 rounded-xl border border-white/5 reveal-up" style="transition-delay: 0.3s;">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-4xl mb-6">flare</span>
+<h3 class="font-headline-md text-headline-md mb-4">Vitality</h3>
+<p class="font-body-md text-on-surface-variant">Movement is life. Our interactions are fluid and organic, mimicking the way light dances across architectural surfaces.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Future India: Modernist Aesthetics -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-7 reveal-up">
+<div class="aspect-video overflow-hidden rounded-lg relative">
+<img alt="Future Living" class="w-full h-full object-cover" data-alt="A futuristic Indian living space blending brutalist concrete forms with traditional wooden lattice work (Jali). Large windows allow slanted golden light to cast geometric shadows across a minimalist floor. The room is decorated with a few pieces of high-end, contemporary furniture in neutral clay tones, creating a soulful and culturally iconic atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6Dw1b5eJz_gmvPQ4YBPrQ31xJixQat_Hv8JJpIYlmM2wmjnpc2-X9o9t3Fys7lJWUoHa0pnDTE-Y-mEUvOiP3gkHFS8auLFQwGDH9n0fVzG2RC75Iry40BrDBwZ61_GbityQFObio_QyKFqSZRZoYYvdHAupHzU5GoWvZ0LUSXwuxhoUOcA8EaCsRIfuVWcvAkBM5-rmbc-96kTz9Tp38y9M6wsMOoY55hZ8_0RehCx9VxvtRhBHzBBHqSLA4-y1kwaZVwn3Mrvc7"/>
+<div class="absolute bottom-6 left-6 glass-panel px-4 py-2 rounded-full border border-white/10">
+<span class="font-label-caps text-[10px] tracking-widest">MODERNIST VESTIGE</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 flex flex-col justify-center reveal-up" style="transition-delay: 0.4s;">
+<span class="font-label-caps text-label-caps text-secondary mb-4 block">02 / CULTURAL CONTINUUM</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6">Future India.</h2>
+<p class="font-body-lg text-on-surface-variant">We represent the new vanguard of Indian design. A philosophy that respects the stoic permanence of ancient architecture while embracing the weightless potential of the digital frontier. It is a dialogue between the stone and the screen.</p>
+</div>
+</div>
+</section>
+<!-- Emotional Technology & Youth Culture -->
+<section class="py-section-gap bg-surface-container-highest/20">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-xl reveal-up">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg mb-6">Soulful Logic.</h2>
+<p class="font-body-lg text-on-surface-variant">Technology is often cold; we make it breathe. Our mission is to empower the next generation of creators with tools that feel like extensions of their own curiosity.</p>
+</div>
+<div class="reveal-up" style="transition-delay: 0.2s;">
+<a class="group flex items-center gap-4 text-primary font-label-caps tracking-widest text-label-caps" href="#">
+                        EXPLORE OUR ECOSYSTEM 
+                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="relative group cursor-pointer reveal-up">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors z-10 rounded-lg"></div>
+<img alt="Emotional Tech" class="w-full h-80 object-cover rounded-lg" data-alt="A close-up shot of a young, creative professional in a dark, atmospheric studio. They are surrounded by high-end tech equipment and glowing screens, but the room is also filled with traditional Indian art objects. The person's face is partially lit by a warm, amber glow from a screen, reflecting a sense of intellectual curiosity and modern Indian youth culture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD643OKCHqxT0Dcjd64XhJXC2YMx5wm2Lr98yDilaXehnL9UAjmUPG7f7fywkOoRBFomSpFWYHChZc5RywUkDXRAmwUUDovPEbIvBnPYXdqd1HoElL0tQ5yEle9lWmS7Uf7gl7b0bzyMpFdNlUVqyXu-Rz5hwfS17sty8qehXF91--2g6yYrhT3cEcPqOWYE9hNJpu80ZJ22B_KJl7-TTPssNNrdFzibkMnO4cL9pgSiclcEyYOKDOO0aTuOXVFq5nQFrwVo04tFlpK"/>
+<div class="absolute bottom-8 left-8 z-20">
+<h4 class="font-headline-md text-white mb-2">Youth &amp; Creativity</h4>
+<p class="font-body-md text-white/70 max-w-xs">Building for the dreamers, the makers, and the cultural icons of tomorrow.</p>
+</div>
+</div>
+<div class="relative group cursor-pointer reveal-up" style="transition-delay: 0.2s;">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors z-10 rounded-lg"></div>
+<img alt="Architectural Path" class="w-full h-80 object-cover rounded-lg" data-alt="A minimalist architectural shot of a narrow hallway with deep shadows and a sliver of bright sunlight at the end. The walls are made of dark, polished basalt, and the floor reflects a thin line of light. This visual represents the journey from darkness to illumination, mirroring the Studio Ravya philosophy of building with light and intentionality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHUx2GaJA1Dcn5dhnIpHE5C73fw4GZEUY4x9pMRFM_GCD8MZ_EoEZjT1pKa7TrB-C_g73dIFuS47zRLJHdfO34Dq-e1UulC4lo3uioLrgbZSgVYj3Neugq4Hn_DBHslzkPii_27zzPsMwRICiSM_Y3RSXY0GwA-Ji0bBc4c9_YWXwyPG8YPqOIsBDPTlxQ0uusNHjwI3HK9MHD2kv1Vuc0LxL7x5hSA4kg7FMUJJqsDUvi9zv9mYotf3-R8DgM0XWXTM6X0gxHldQy"/>
+<div class="absolute bottom-8 left-8 z-20">
+<h4 class="font-headline-md text-white mb-2">Sensory Precision</h4>
+<p class="font-body-md text-white/70 max-w-xs">Interfaces that react to touch with the grace of a physical material.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Manifesto Quote -->
+<section class="min-h-[819px] flex items-center justify-center relative px-margin-mobile">
+<div class="absolute inset-0 z-0 overflow-hidden">
+<div class="w-[200%] h-[200%] absolute top-[-50%] left-[-50%] sun-glow opacity-30 animate-pulse"></div>
+</div>
+<div class="relative z-10 text-center max-w-4xl reveal-up">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg italic mb-12">"Radiance is our language."</h2>
+<div class="w-16 h-[1px] bg-primary mx-auto mb-12"></div>
+<p class="font-label-caps text-label-caps tracking-[0.5em] text-on-surface-variant">STUDIO RAVYA — SINCE 2024</p>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full bg-surface border-t border-outline-variant/30">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-20 flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+<div>
+<div class="font-display-lg text-headline-lg tracking-tighter text-on-surface mb-4">STUDIO RAVYA</div>
+<p class="font-body-md text-on-surface-variant">© 2024 STUDIO RAVYA. CRAFTED IN LIGHT.</p>
+</div>
+<div class="flex flex-wrap gap-8">
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-all duration-500" href="#">Instagram</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-all duration-500" href="#">Vimeo</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-all duration-500" href="#">LinkedIn</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-all duration-500" href="#">Privacy</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-all duration-500 border-b border-primary/20" href="#">Inquire</a>
+</div>
+</div>
+</footer>
+<script>
+        // Intersection Observer for Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+
+        // Parallax and Light Effects
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            
+            // Subtle header opacity shift
+            const nav = document.querySelector('nav');
+            if (scrolled > 50) {
+                nav.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
+            } else {
+                nav.style.backgroundColor = 'rgba(255, 255, 255, 0.03)';
+            }
+
+            // Hero parallax
+            const heroImg = document.querySelector('section img');
+            if (heroImg) {
+                heroImg.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+
+        // Mouse trail light effect (Desktop only)
+        if (window.innerWidth > 768) {
+            document.body.addEventListener('mousemove', (e) => {
+                const x = e.clientX;
+                const y = e.clientY;
+                const glow = document.createElement('div');
+                glow.className = 'fixed pointer-events-none z-[60] w-64 h-64 sun-glow opacity-10 rounded-full blur-3xl';
+                glow.style.left = `${x - 128}px`;
+                glow.style.top = `${y - 128}px`;
+                document.body.appendChild(glow);
+                
+                setTimeout(() => {
+                    glow.style.opacity = '0';
+                    setTimeout(() => glow.remove(), 1000);
+                }, 100);
+            });
+        }
+    </script>
+</body></html>

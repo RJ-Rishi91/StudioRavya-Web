@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary": "#442b00",
+                      "on-primary": "#31302e",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#ecbf7f",
+                      "on-primary-fixed": "#1c1c19",
+                      "inverse-surface": "#e5e2e1",
+                      "inverse-primary": "#605e5b",
+                      "on-error": "#690005",
+                      "surface-container-lowest": "#0e0e0e",
+                      "outline": "#939189",
+                      "tertiary": "#ffffff",
+                      "error-container": "#93000a",
+                      "on-surface-variant": "#c9c6be",
+                      "outline-variant": "#484740",
+                      "primary-fixed": "#e6e2de",
+                      "inverse-on-surface": "#313030",
+                      "tertiary-fixed": "#ffddb2",
+                      "on-secondary": "#392f21",
+                      "surface-container-low": "#1c1b1b",
+                      "on-secondary-fixed": "#231a0e",
+                      "on-tertiary-fixed-variant": "#60410c",
+                      "surface": "#131313",
+                      "on-secondary-container": "#c3b3a0",
+                      "on-surface": "#e5e2e1",
+                      "surface-variant": "#353534",
+                      "surface-container-highest": "#353534",
+                      "secondary-container": "#504536",
+                      "secondary-fixed-dim": "#d5c4b1",
+                      "on-tertiary-fixed": "#291800",
+                      "surface-bright": "#393939",
+                      "background": "#131313",
+                      "secondary": "#d5c4b1",
+                      "on-tertiary-container": "#815e28",
+                      "primary-fixed-dim": "#c9c6c2",
+                      "surface-container": "#201f1f",
+                      "on-secondary-fixed-variant": "#504536",
+                      "primary-container": "#e6e2de",
+                      "surface-container-high": "#2a2a2a",
+                      "on-background": "#e5e2e1",
+                      "on-primary-fixed-variant": "#484744",
+                      "tertiary-container": "#ffddb2",
+                      "surface-tint": "#c9c6c2",
+                      "error": "#ffb4ab",
+                      "on-primary-container": "#666461",
+                      "surface-dim": "#131313",
+                      "secondary-fixed": "#f2e0cc",
+                      "primary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "gutter": "24px",
+                      "section-gap": "160px",
+                      "margin-desktop": "80px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "display-lg": ["Playfair Display"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "label-caps": ["Plus Jakarta Sans"],
+                      "headline-md": ["Playfair Display"],
+                      "headline-lg": ["Playfair Display"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                      "display-lg": ["84px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                      "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>.film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAMCUCNHwyMTpeeBxWQD34-AyxF7nxrERor0L3MiRH_z2E63K39oLrKYnPu5oslenBUCtzfhFMEbGN8L4skHm_SiPlCFe1vDW_WHowe7nwyghRK6KGf17y2B4O-a972eSp1XXeh6swhKEBSOnftLcgCJzXCYRULSEDispDnuenvAwxji_AWBJZF_F2kgtf7Qc3s0VN0ewWWkQ7fdvVrBkGCwiHvXpNoP7KbZQmiJ1zmc-q22cqeWViSy_FPcMgxe7N17USMiDy3ab4O)
+    }
+.atmospheric-haze {
+    background: radial-gradient(circle at top right, rgba(236, 191, 127, 0.08) 0%, transparent 70%)
+    }
+.glass-nav {
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px)
+    }
+.smooth-scroll {
+    scroll-behavior: smooth
+    }</style>
+</head>
+<body class="bg-background text-on-background font-body-md smooth-scroll overflow-x-hidden selection:bg-tertiary-fixed-dim selection:text-on-tertiary">
+<div class="film-grain"></div>
+<!-- Navigation -->
+<nav class="fixed top-8 left-1/2 -translate-x-1/2 w-[90%] rounded-full z-50 bg-white/5 border border-white/10 glass-nav shadow-2xl flex justify-between items-center px-8 py-4">
+<div class="font-display-lg text-headline-md tracking-widest text-primary">STUDIO RAVYA</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-caps text-label-caps tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">Ecosystem</a>
+<a class="font-label-caps text-label-caps tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">Projects</a>
+<a class="font-label-caps text-label-caps tracking-[0.2em] text-primary font-bold border-b border-primary/30 pb-1" href="#">Journal</a>
+<a class="font-label-caps text-label-caps tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">Philosophy</a>
+</div>
+<button class="font-label-caps text-label-caps tracking-[0.2em] bg-primary text-on-primary px-6 py-2 rounded-full hover:scale-105 transition-transform duration-300 active:opacity-80 active:scale-95">Connect</button>
+</nav>
+<main class="pt-0 min-h-screen atmospheric-haze">
+<!-- Hero Section -->
+<section class="relative h-[921px] w-full overflow-hidden flex items-end pb-24">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover filter brightness-[0.6] contrast-[1.1]" data-alt="A cinematic, atmospheric shot of an architectural sandstone interior where a single, sharp shaft of warm morning light pierces through a high circular aperture. The scene is dominated by deep shadows and heavy textures, evoking a sense of quiet luxury and ancient permanence. The lighting is directional and dramatic, creating a poetic dialogue between form and void in a minimalist, sculptural space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTl8qt_oJuavJl7laj66vYW4vQ0LmIywd-KqEfrVq9D6ifVN5bq0-VL33Fbmt1CwbdiaquqkufQ769AcuKLW64mDB_xzaWMQmWmo3F4KFWvJgNCvzE-1MvzhAhfwj4_6Y6GLYz8muInNmx7E0vZK63A0Fb1HQcVz56u05rUIDbvQKa8xt7KeuO-44NfAK-fLHWhULdumNmhrl1iPjbzezaz6B4obUo3IpTRSUNjqYpTw3mG43AWrGQsOtcHueJ9zFXmv0emkIYqfHB"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-margin-desktop w-full">
+<div class="max-w-2xl">
+<span class="font-label-caps text-label-caps tracking-[0.3em] text-secondary mb-6 block">FEATURED ESSAY</span>
+<h1 class="font-display-lg text-display-lg mb-8 leading-none">The Quietude of Form</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">An exploration into the architectural silence of the Thar desert, and how shadow defines the weight of existence.</p>
+<a class="inline-flex items-center gap-4 group" href="#">
+<span class="font-label-caps text-label-caps tracking-widest text-primary">READ THE ESSAY</span>
+<div class="w-12 h-px bg-primary/30 group-hover:w-20 transition-all duration-700"></div>
+</a>
+</div>
+</div>
+</section>
+<!-- Journal Grid -->
+<section class="max-w-7xl mx-auto px-margin-desktop py-section-gap">
+<div class="flex flex-col gap-20">
+<!-- Two Column Editorial Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<div class="md:col-span-7 group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden mb-8">
+<img class="w-full h-full object-cover grayscale transition-transform duration-[2000ms] ease-out group-hover:scale-105" data-alt="A minimalist interior composition featuring a single, handcrafted ceramic vessel placed on a heavy slab of dark basalt. The background is a soft, textured clay wall illuminated by a diffused, golden light source from the side. The mood is intellectual and calm, using a palette of soft clay, sandstone beige, and deep charcoal to create an editorial, Kinfolk-inspired visual essay thumbnail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo12XmNs8tL7lENqF21yrxNlzVsPYACIoQ6iYjnNYZvzM7M8sYaZNuX_V1zA7fMyIph0yHGvFNpQ153R-AwvfM9vPalO6IcEFK6t9eDA3VdZDokQa1ZOZwBSBdSH3QcoIJm3Mz5UCvl-jMx0-t5SSic0C6Km1jB9rhFXfgw6eeMAFWJsfrv_352ngKavZXHjZmzJHASnVpOc3lUScoUqS8nIKV-JQZRRZV_YiZ5shV9JDe_hC4X5P1JFkuyRJ-OCfVyEhPIJKK3RaJ"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+</div>
+<span class="font-label-caps text-label-caps text-secondary tracking-widest block mb-4">VISUAL ESSAY</span>
+<h2 class="font-headline-lg text-headline-lg mb-4 group-hover:text-tertiary-fixed-dim transition-colors duration-500">Materiality &amp; Memory</h2>
+<p class="font-body-md text-on-surface-variant max-w-md">How the tactile nature of stone and fiber anchors the human spirit in an increasingly digital world.</p>
+</div>
+<div class="md:col-span-4 md:col-start-9 mt-0 md:mt-40 group cursor-pointer">
+<div class="relative aspect-square overflow-hidden mb-8">
+<img class="w-full h-full object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-110" data-alt="A close-up, cinematic detail of light hitting a textured linen fabric draped over a wooden chair. The lighting is high-contrast, casting deep architectural shadows and highlighting the organic weave of the material. The aesthetic is sophisticated and moody, resembling a frame from a high-end editorial magazine with subtle film grain and warm, luminous accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMoYZRVu8IGn4BeMkmDLUtRP4dlmFrHiphFvPjztprSAZ7wbSNZlJQoXmKy7rcJFTjGhCCThgeRATrrpqy_o5WKi_1BcawBwJlHYzClhciPwePs-3uKAxOzVLs9wCiNKXrmAtZkhOijkC7G1MV8Q6BVHyuDEHYCUcEfpt4yKmLUpv0OyJkE2OPScSg_LBmn4OZVWKRdQPzWaNeV0lrgzgUf08WxMrkFdxCUgTI-Bt3--WC2ARzqLt-taDB0dLdOrFukpECaJwWXjeh"/>
+</div>
+<span class="font-label-caps text-label-caps text-secondary tracking-widest block mb-4">FOUNDER NOTES</span>
+<h2 class="font-headline-md text-headline-md mb-4 group-hover:text-tertiary-fixed-dim transition-colors duration-500">The Curation of Life</h2>
+<p class="font-body-md text-on-surface-variant">A reflection on intentionality, slowing down, and the luxury of unhurried mornings.</p>
+</div>
+</div>
+<!-- Separator Line -->
+<div class="w-full h-px bg-outline-variant/20 my-unit"></div>
+<!-- Three Column Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] mb-8 overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover filter sepia-[0.3] brightness-[0.8] group-hover:scale-105 transition-transform duration-[1500ms]" data-alt="An abstract architectural shot of stairs leading into a dark void, with a sliver of sun gold light illuminating the edge of each step. The composition is highly symmetrical yet hauntingly empty, capturing the essence of Indian Artistic Futurism through the lens of minimalist geometry and cinematic atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcpKr19mRC-Rye67O9G4YmTG2pX_hN1F7oMGOe5liHW2YrBWqvw5ejcevPHvM2R4DG0YMtSfsVmPC1rcRv4aBD4bYRTHmmS-r7rFfPLexR6b6vNKulO4UpA5_Qj90fZ1Zy-futDp3gPLVAHDPKBeTmak1t2r4lls6tIo-FPmrdwkgM5Pl_9PP59-uwwp_7G_soOdRfl5MCH84ZCKTj0Xm4oBb29dvuCbMPfHCNiy_Wv1JcC6sQtsZQ-92dvzd7xRCOZP6te0gP8cVW"/>
+</div>
+<span class="font-label-caps text-label-caps text-secondary tracking-widest mb-4 block">ARCHITECTURE</span>
+<h3 class="font-headline-md text-[24px] leading-snug mb-3">Void as a Destination</h3>
+<p class="font-body-md text-on-surface-variant line-clamp-3">Redefining the luxury of space not by what it contains, but by what it allows to breathe.</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] mb-8 overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover filter brightness-[0.7] group-hover:scale-105 transition-transform duration-[1500ms]" data-alt="A moody, high-fashion editorial portrait of an artisan's hands working with gold leaf in a dimly lit studio. The focus is on the shimmering metal reacting to a single light source, surrounded by the dark, textured materials of the workshop. The image carries a sense of profound craftsmanship and intellectual depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9m6-e2Hxda6ZHOqWHNmlAUkIWyraLYc33ZSqhEVUkt0EFw8c5Wm1KJ7fEhiszPEnAKvXl-r0jqY6NXjoolqJ9B-rCu_M8Rj1aa_EQ_SOzdiLNRD5M6H_-i32RZbJrfztbCt3dutkP7kDAGnq-n8Gerv2EMMjRAgs6oe2Gd2gqHmjwGgN2ZPw8o9oTqdx9Z3f-46Py9BZNj3o5UxEXFFZOnQ9bffmbelfAE9VFd0PbijimN50RvWRRhPp6lP97cqiJx6ZSmUuJ6xyj"/>
+</div>
+<span class="font-label-caps text-label-caps text-secondary tracking-widest mb-4 block">CRAFT</span>
+<h3 class="font-headline-md text-[24px] leading-snug mb-3">The Gilded Shadow</h3>
+<p class="font-body-md text-on-surface-variant line-clamp-3">Why the most beautiful details are often those hidden in the periphery of our vision.</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] mb-8 overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover filter contrast-[1.2] group-hover:scale-105 transition-transform duration-[1500ms]" data-alt="A cinematic landscape of the high Himalayas at dusk, with the peaks glowing in a faint sun gold against a deep indigo sky. The composition is wide and evocative, emphasizing the scale of the landscape and the stoic permanence of nature. The image is crisp yet carries a tactile, filmic quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkyiDD7LRj4F6g7FtD_bEpnUK22SkWKhsSin1wtZsxFomZS-BwdVU0JKbzTe3cENOiwZFGh_iBmhmhkuOocNA_jBESNqxLcD_jKm8w2nieh9k4hZrUCy4O2poeU0uKEAMVLYO8Hr4lBqzyPYEbc96QhazVRiMikHo39lauBcnXHbDhR_4dPHA8xfHVn9UqQ8Kmckkz5zC5Pe2_t49YqRSrl6xTcfwj3gmXNx-C55evDE87_UBADBa_tl8I_1mIWF-8X69_kgB1iwHM"/>
+</div>
+<span class="font-label-caps text-label-caps text-secondary tracking-widest mb-4 block">TRAVEL</span>
+<h3 class="font-headline-md text-[24px] leading-snug mb-3">Echoes of the North</h3>
+<p class="font-body-md text-on-surface-variant line-clamp-3">A journey into the silence of the high peaks, where the air is thin and the mind is clear.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Invitation -->
+<section class="max-w-7xl mx-auto px-margin-desktop py-section-gap border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-center gap-12">
+<div class="max-w-xl text-center md:text-left">
+<h2 class="font-headline-lg text-headline-lg mb-6">Join the Journal</h2>
+<p class="font-body-lg text-on-surface-variant">Twice a month, we share a collection of thoughts, visual inspirations, and studio updates curated for the intentional mind.</p>
+</div>
+<div class="w-full max-w-md">
+<form class="flex flex-col gap-6">
+<input class="bg-transparent border-b border-outline-variant py-4 px-0 focus:outline-none focus:border-tertiary-fixed-dim transition-colors text-label-caps tracking-widest placeholder:text-outline/50" placeholder="YOUR EMAIL" type="email"/>
+<button class="bg-primary text-on-primary py-4 font-label-caps text-label-caps tracking-widest hover:bg-secondary transition-colors duration-500">SUBSCRIBE</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-section-gap border-t border-outline-variant/30 bg-surface">
+<div class="max-w-7xl mx-auto px-margin-desktop py-20 flex flex-col gap-unit">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
+<div class="font-display-lg text-headline-lg tracking-tighter text-on-surface">STUDIO RAVYA</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12 md:gap-24">
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-[10px] text-outline tracking-[0.3em]">SOCIAL</span>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-500 ease-in-out" href="#">Instagram</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-500 ease-in-out" href="#">Vimeo</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-500 ease-in-out" href="#">LinkedIn</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-[10px] text-outline tracking-[0.3em]">STUDIO</span>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-500 ease-in-out" href="#">Projects</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-500 ease-in-out" href="#">Journal</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-500 ease-in-out" href="#">Inquire</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-[10px] text-outline tracking-[0.3em]">LEGAL</span>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-500 ease-in-out" href="#">Privacy</a>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-outline-variant/10 text-on-surface-variant">
+<p class="font-body-md text-body-md">© 2024 STUDIO RAVYA. CRAFTED IN LIGHT.</p>
+<div class="flex items-center gap-6 mt-6 md:mt-0">
+<span class="material-symbols-outlined text-[18px]">public</span>
+<span class="font-label-caps text-[10px] tracking-widest">GLOBAL / EN</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Smooth parallax effect on scroll for images
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxImages = document.querySelectorAll('img');
+            parallaxImages.forEach(img => {
+                const speed = 0.05;
+                const rect = img.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    img.style.transform = `translateY(${(rect.top - window.innerHeight/2) * speed}px) scale(1.05)`;
+                }
+            });
+
+            // Fade in navigation background on scroll
+            const nav = document.querySelector('nav');
+            if (scrolled > 100) {
+                nav.classList.add('bg-white/10');
+            } else {
+                nav.classList.remove('bg-white/10');
+            }
+        });
+
+        // Hover interactions for editorial cards
+        const cards = document.querySelectorAll('.group');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Potential for more custom JS micro-interactions
+            });
+        });
+    </script>
+</body></html>

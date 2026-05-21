@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>STUDIO RAVYA | ECOSYSTEM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#442b00",
+                    "on-primary": "#31302e",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#ecbf7f",
+                    "on-primary-fixed": "#1c1c19",
+                    "inverse-surface": "#e5e2e1",
+                    "inverse-primary": "#605e5b",
+                    "on-error": "#690005",
+                    "surface-container-lowest": "#0e0e0e",
+                    "outline": "#939189",
+                    "tertiary": "#ffffff",
+                    "error-container": "#93000a",
+                    "on-surface-variant": "#c9c6be",
+                    "outline-variant": "#484740",
+                    "primary-fixed": "#e6e2de",
+                    "inverse-on-surface": "#313030",
+                    "tertiary-fixed": "#ffddb2",
+                    "on-secondary": "#392f21",
+                    "surface-container-low": "#1c1b1b",
+                    "on-secondary-fixed": "#231a0e",
+                    "on-tertiary-fixed-variant": "#60410c",
+                    "surface": "#131313",
+                    "on-secondary-container": "#c3b3a0",
+                    "on-surface": "#e5e2e1",
+                    "surface-variant": "#353534",
+                    "surface-container-highest": "#353534",
+                    "secondary-container": "#504536",
+                    "secondary-fixed-dim": "#d5c4b1",
+                    "on-tertiary-fixed": "#291800",
+                    "surface-bright": "#393939",
+                    "background": "#131313",
+                    "secondary": "#d5c4b1",
+                    "on-tertiary-container": "#815e28",
+                    "primary-fixed-dim": "#c9c6c2",
+                    "surface-container": "#201f1f",
+                    "on-secondary-fixed-variant": "#504536",
+                    "primary-container": "#e6e2de",
+                    "surface-container-high": "#2a2a2a",
+                    "on-background": "#e5e2e1",
+                    "on-primary-fixed-variant": "#484744",
+                    "tertiary-container": "#ffddb2",
+                    "surface-tint": "#c9c6c2",
+                    "error": "#ffb4ab",
+                    "on-primary-container": "#666461",
+                    "surface-dim": "#131313",
+                    "secondary-fixed": "#f2e0cc",
+                    "primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "section-gap": "160px",
+                    "margin-desktop": "80px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "display-lg": ["Playfair Display"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                    "display-lg": ["84px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            cursor: crosshair;
+            overflow-x: hidden;
+        }
+        .grain-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url("https://grainy-gradients.vercel.app/noise.svg");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 999;
+        }
+        .sunlight-leak {
+            background: radial-gradient(circle at 10% 10%, rgba(255, 221, 178, 0.08) 0%, transparent 50%);
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .connection-canvas {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            opacity: 0.4;
+        }
+        .node-float {
+            animation: float 8s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(-20px) translateX(10px); }
+        }
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(24px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface selection:bg-tertiary-fixed-dim selection:text-on-tertiary">
+<div class="grain-overlay"></div>
+<div class="sunlight-leak"></div>
+<!-- Navigation -->
+<nav class="fixed top-8 left-1/2 -translate-x-1/2 w-[90%] rounded-full nav-glass border border-white/10 shadow-2xl flex justify-between items-center px-8 py-4 z-50">
+<div class="font-display-lg text-headline-md tracking-widest text-primary">STUDIO RAVYA</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-caps text-label-caps tracking-[0.2em] text-primary font-bold border-b border-primary/30 pb-1" href="#">Ecosystem</a>
+<a class="font-label-caps text-label-caps tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">Projects</a>
+<a class="font-label-caps text-label-caps tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">Journal</a>
+<a class="font-label-caps text-label-caps tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">Philosophy</a>
+</div>
+<button class="bg-primary text-on-primary font-label-caps text-label-caps py-2 px-6 rounded-full hover:scale-105 transition-transform duration-300">Connect</button>
+</nav>
+<!-- Hero / Ecosystem Visualization -->
+<main class="relative min-h-screen flex flex-col justify-center items-center px-margin-desktop overflow-hidden">
+<canvas class="connection-canvas" id="connection-canvas"></canvas>
+<div class="relative z-10 text-center max-w-4xl pt-section-gap">
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim tracking-[0.4em] block mb-6 opacity-80">A LIVING VISUALIZATION</span>
+<h1 class="font-display-lg text-headline-lg md:text-display-lg mb-8 leading-tight">Ecosystem of Light.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto opacity-70">
+                A non-linear network where ancient craft meets digital permanence. We cultivate a sanctuary for those who build worlds from whispers.
+            </p>
+</div>
+<!-- Floating Nodes (Visual Anchors) -->
+<div class="absolute inset-0 pointer-events-none">
+<div class="absolute top-[20%] left-[10%] node-float opacity-40">
+<span class="font-label-caps text-label-caps tracking-widest text-secondary-fixed">WRITERS</span>
+</div>
+<div class="absolute top-[60%] right-[15%] node-float opacity-30" style="animation-delay: -2s">
+<span class="font-label-caps text-label-caps tracking-widest text-secondary-fixed">FILMMAKERS</span>
+</div>
+<div class="absolute bottom-[25%] left-[20%] node-float opacity-50" style="animation-delay: -4s">
+<span class="font-label-caps text-label-caps tracking-widest text-secondary-fixed">DEVELOPERS</span>
+</div>
+<div class="absolute top-[30%] right-[30%] node-float opacity-20" style="animation-delay: -1s">
+<span class="font-label-caps text-label-caps tracking-widest text-secondary-fixed">DESIGNERS</span>
+</div>
+<div class="absolute bottom-[40%] right-[40%] node-float opacity-40" style="animation-delay: -5s">
+<span class="font-label-caps text-label-caps tracking-widest text-secondary-fixed">INNOVATORS</span>
+</div>
+</div>
+</main>
+<!-- Interactive Map Section -->
+<section class="py-section-gap px-margin-desktop bg-surface">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 order-2 md:order-1">
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim tracking-[0.3em] block mb-4">MAPPING CREATIVITY</span>
+<h2 class="font-headline-lg text-headline-lg mb-8">Nodes of Resonance.</h2>
+<div class="space-y-unit py-6">
+<div class="flex items-start gap-4 p-4 border-b border-outline-variant/30 group cursor-pointer hover:bg-white/5 transition-all">
+<span class="text-tertiary-fixed-dim font-display-lg text-headline-md opacity-50 group-hover:opacity-100">01</span>
+<div>
+<h4 class="font-label-caps text-label-caps mb-2">ARCHITECTURAL VOIDS</h4>
+<p class="text-on-surface-variant opacity-70">Sanctuaries across three continents for quiet creation and intellectual gathering.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 border-b border-outline-variant/30 group cursor-pointer hover:bg-white/5 transition-all">
+<span class="text-tertiary-fixed-dim font-display-lg text-headline-md opacity-50 group-hover:opacity-100">02</span>
+<div>
+<h4 class="font-label-caps text-label-caps mb-2">DIGITAL ETHEREUM</h4>
+<p class="text-on-surface-variant opacity-70">Decentralized protocols built to preserve artistic intent beyond platform lifecycles.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-7 order-1 md:order-2 relative h-[500px] rounded-xl overflow-hidden shadow-2xl border border-white/5">
+<div class="absolute inset-0 bg-surface-container">
+<img alt="Interactive Network Map" class="w-full h-full object-cover opacity-40 grayscale mix-blend-luminosity" data-alt="A dark, atmospheric topographical map displayed on a sleek glass surface with glowing amber data points. The scene is illuminated by a single warm light source, creating a sense of mystery and global connectivity. The style is cinematic and architectural, emphasizing deep shadows and high-contrast gold highlights against a charcoal background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-q1neaHRL8PunmSLGkxIa7pLMBf7IagP7VIiFRIKrBxIp3TzPA9FgE5uzaB73agLXfKkCPpSaw1T-Fyu0lYsiF7k02ywOCJ0_LaODGqv74OMR0XP1xRbLfN_elos0j3UsywlTSqgBW-bElEyy0nZYitdqCijoDcJVG2Ywf22oZN8CIBB0ruY2IVRDvwTY2ebL5pyKm1-bY9d3pVdNlTuN4CIEf-DdCLxRZ68Z_B5qjrtY3Bj4tCQbUMvyotEELgP1TyJVmZxe-cmA"/>
+<!-- Overlaying "Nodes" -->
+<div class="absolute top-[30%] left-[40%] w-3 h-3 bg-tertiary-fixed-dim rounded-full shadow-[0_0_15px_rgba(236,191,127,0.8)] animate-pulse"></div>
+<div class="absolute top-[50%] left-[60%] w-2 h-2 bg-tertiary-fixed-dim rounded-full shadow-[0_0_10px_rgba(236,191,127,0.5)]"></div>
+<div class="absolute top-[70%] left-[30%] w-2 h-2 bg-tertiary-fixed-dim rounded-full shadow-[0_0_10px_rgba(236,191,127,0.5)]"></div>
+</div>
+<div class="absolute bottom-6 left-6 p-4 nav-glass rounded-lg border border-white/10">
+<p class="font-label-caps text-[10px] tracking-widest text-on-surface-variant">ACTIVE NODE: NEW DELHI</p>
+<p class="text-[12px] text-primary">STATION 04: SILK ROAD PROTOCOL</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Network Sections: Bento Grid -->
+<section class="pb-section-gap px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter h-full">
+<!-- Creative Network -->
+<div class="md:col-span-2 group relative overflow-hidden rounded-xl bg-surface-container h-[450px] p-12 border border-white/5 hover:border-tertiary-fixed-dim/30 transition-all duration-700">
+<div class="relative z-10 h-full flex flex-col justify-end">
+<span class="material-symbols-outlined text-tertiary-fixed-dim mb-6 text-headline-lg">hub</span>
+<h3 class="font-headline-md text-headline-md mb-4">Creative Network</h3>
+<p class="font-body-md text-on-surface-variant max-w-md opacity-70 group-hover:opacity-100 transition-opacity">A curated collective of global masters and emerging voices sharing a singular aesthetic language.</p>
+</div>
+<div class="absolute inset-0 z-0 opacity-20 group-hover:scale-110 transition-transform duration-1000">
+<img alt="Creative Network Background" class="w-full h-full object-cover grayscale" data-alt="An abstract cinematic view of silhouettes walking through a vast sandstone hallway with light filtering through dust motes. The atmosphere is quiet and intellectual, evoking a sense of communal purpose and ancient wisdom. The color palette is restricted to deep blacks, warm ambers, and soft grey mid-tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnA7ouiQ1Q0JD57Bf9XPxxZxXUuVgNGyivOrORNZ60MdD4DN12TRw_pZc7-KwKduXF6fX5tjbYzMNpBeQRVge4x_lyRvlL_Djo0tGRkFA3CVRAymVpjMJp0XdlOjtHgoeQG6Dq2FOiexE2HVuVSphpY1bvPqAkgBRUWn7Tb_LrqMNELeVTubBxtZv8DiJ6XpUaJiaYThM8QFvEAPG4_dQlHV8ZNMRkdgMGNTmEH_SWPTKVRAa7cQEysiUEJftMFSfb9vYoG2NkR0fB"/>
+</div>
+</div>
+<!-- Youth Collaborations -->
+<div class="group relative overflow-hidden rounded-xl bg-surface-container h-[450px] p-12 border border-white/5 hover:border-tertiary-fixed-dim/30 transition-all duration-700">
+<div class="relative z-10 h-full flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-headline-md">auto_awesome</span>
+<span class="font-label-caps text-[10px] tracking-widest border border-white/20 px-2 py-1 rounded">2024 INTAKE</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md mb-4">Youth Collaborations</h3>
+<p class="font-body-md text-on-surface-variant opacity-70">Empowering the next generation through direct mentorship and decentralized funding.</p>
+</div>
+</div>
+</div>
+<!-- Storytelling Lab (Offset Column) -->
+<div class="md:col-span-3 group relative overflow-hidden rounded-xl bg-surface-container h-[350px] p-12 border border-white/5 hover:border-tertiary-fixed-dim/30 transition-all duration-700 mt-gutter flex items-center justify-between">
+<div class="max-w-xl">
+<h3 class="font-headline-md text-headline-md mb-4">Storytelling Lab</h3>
+<p class="font-body-md text-on-surface-variant opacity-70">Researching the intersection of oral traditions and spatial computing to create "Living Memories".</p>
+</div>
+<div class="hidden md:block">
+<button class="border border-tertiary-fixed-dim/40 text-tertiary-fixed-dim font-label-caps text-label-caps px-10 py-4 rounded-full hover:bg-tertiary-fixed-dim hover:text-on-tertiary transition-all duration-500">VIEW EXPERIMENTS</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full mt-section-gap border-t border-outline-variant/30 bg-surface">
+<div class="max-w-7xl mx-auto px-margin-desktop py-20 flex flex-col gap-unit">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-10">
+<div class="font-display-lg text-headline-lg tracking-tighter text-on-surface">STUDIO RAVYA</div>
+<div class="flex flex-wrap gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-500 ease-in-out" href="#">Instagram</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-500 ease-in-out" href="#">Vimeo</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-500 ease-in-out" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-500 ease-in-out" href="#">Privacy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-500 ease-in-out" href="#">Inquire</a>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center border-t border-white/5 pt-10">
+<p class="font-label-caps text-label-caps text-on-surface-variant/50">© 2024 STUDIO RAVYA. CRAFTED IN LIGHT.</p>
+<div class="flex items-center gap-2 text-on-surface-variant/50">
+<span class="w-1 h-1 bg-tertiary-fixed-dim rounded-full"></span>
+<span class="font-label-caps text-[10px] tracking-widest uppercase">Connectivity Protocol 1.0</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Connection Canvas Animation
+        const canvas = document.getElementById('connection-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.3;
+                this.vy = (Math.random() - 0.5) * 0.3;
+                this.size = Math.random() * 2;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(236, 191, 127, 0.4)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            particles = [];
+            for (let i = 0; i < 60; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach((p, i) => {
+                p.update();
+                p.draw();
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = p.x - particles[j].x;
+                    const dy = p.y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 150) {
+                        ctx.strokeStyle = `rgba(236, 191, 127, ${0.15 - dist/1000})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+        init();
+        animate();
+
+        // Parallax Effect for Nodes
+        window.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            document.querySelectorAll('.node-float').forEach((node, index) => {
+                const depth = (index + 1) * 0.5;
+                node.style.transform = `translate(${moveX * depth}px, ${moveY * depth}px)`;
+            });
+        });
+    </script>
+</body></html>
